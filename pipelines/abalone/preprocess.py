@@ -3,13 +3,10 @@ import argparse
 import logging
 import os
 import pathlib
-import requests
-import tempfile
 
 import boto3
 import numpy as np
 import pandas as pd
-
 from sklearn.compose import ColumnTransformer
 from sklearn.impute import SimpleImputer
 from sklearn.pipeline import Pipeline
@@ -18,7 +15,6 @@ from sklearn.preprocessing import StandardScaler, OneHotEncoder
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 logger.addHandler(logging.StreamHandler())
-
 
 # Since we get a headerless CSV file we specify the column names here.
 feature_columns_names = [
